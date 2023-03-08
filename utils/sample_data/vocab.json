@@ -2,11 +2,8 @@
  "word": {
   "Title": "Squegee",
   "Definition": "a device that allows one to squge",
-  "Language/Tech": "Upper Uncton",
-  "Time Submital": {
-    "type": "Control",
-    "scope": "#/properties/time"
-  },
+  "Language": "Upper Uncton",
+  "Time Submital": "1245 pm",
   "user_id": "sillwilly"
  }
 
