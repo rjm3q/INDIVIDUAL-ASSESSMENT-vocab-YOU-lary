@@ -1,4 +1,6 @@
-import { getWords, makeWords, updateWords, oneThing } from '../../api/promise';
+import {
+  getWords, makeWords, updateWords, oneThing
+} from '../../api/promise';
 import { showWords } from '../../pages/words';
 import clearDom from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDom';
@@ -31,25 +33,26 @@ const formEvents = (uid) => {
         firebaseKey,
       };
       payload.firebaseKey = firebaseKey;
-      oneThing(firebaseKey).then() => {
+      oneThing(firebaseKey).then(() => {
         updateWords(payload).then(() => {
           getWords(uid).then(showWords);
         });
+      });
     }
-    }
-  document.querySelector('#form-display').addEventListener('click', (e) => {
-    if (e.target.id.includes('add-a-thing')) {
-      clearDOM();
-      const domString = `
+
+    document.querySelector('#form-display').addEventListener('click', (event) => {
+      if (event.target.id.includes('add-a-thing')) {
+        clearDom();
+        const domString = `
       <div id="add-category-div>
         <label for="new-category">New Thing</label>
         <input id="new-category">
         <button id="new-category-btn">Do the thing!!</button>
-      </div>
-      `;
+      </div>`;
 
-      renderToDOM(domString, '#form-display');
-    }
+        renderToDOM(domString, '#form-display');
+      }
+    });
   });
 };
 

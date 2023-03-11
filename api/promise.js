@@ -4,11 +4,11 @@ const url = client.databaseURL;
 
 const getWords = (uid) => new Promise((resolve, reject) => {
   fetch(`${url}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
-    method: 'GET'
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       'Cache-Control': 'no-cache'
-    }
+    },
   })
     .then((response) => response.json())
     .then((data) => resolve(Object.values(data)))
