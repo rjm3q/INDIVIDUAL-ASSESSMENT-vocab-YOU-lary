@@ -31,14 +31,12 @@ const formEvents = (uid) => {
         firebaseKey,
       };
       payload.firebaseKey = firebaseKey;
-      oneThing(firebaseKey).then()) => {
+      oneThing(firebaseKey).then() => {
         updateWords(payload).then(() => {
           getWords(uid).then(showWords);
         });
-      });
     }
-  });
-
+    }
   document.querySelector('#form-display').addEventListener('click', (e) => {
     if (e.target.id.includes('add-a-thing')) {
       clearDOM();
