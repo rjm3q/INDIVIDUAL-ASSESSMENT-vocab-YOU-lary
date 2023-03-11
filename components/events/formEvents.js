@@ -1,79 +1,56 @@
-// import { getBooks, updateBook, createBook } from '../api/bookData';
-// import { createAuthor, updateAuthor, getAuthors } from '../api/authorData';
-// import { showBooks } from '../pages/books';
-// import { showAuthors } from '../pages/authors';
+import { getWords, makeWords, updateWords, oneThing } from '../../api/promise';
+import { showWords } from '../../pages/words';
+import clearDom from '../../utils/clearDom';
+import renderToDOM from '../../utils/renderToDom';
 
-const formEvents = (user) => {
+const formEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A BOOK
-    if (e.target.id.includes('submit-book')) {
+    if (e.target.id.includes('submit')) {
       const payload = {
-        title: document.querySelector('#title').value,
-        description: document.querySelector('#description').value,
-        image: document.querySelector('#image').value,
-        price: document.querySelector('#price').value,
-        author_id: document.querySelector('#author_id').value,
-        sale: document.querySelector('#sale').checked,
+        Name: document.querySelector('#Name').value,
+        Description: document.querySelector('#desc').value,
+        Type: document.querySelector('#Type').value,
+        Time: document.querySelector('#time').value,
       };
-      createBook(payload).then(({ name }) => {
+      makeWords(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
-        updateBook(patchPayload).then(() => {
-          getBooks(user.uid).then(showBooks);
+        updateWords(patchPayload).then(() => {
+          getWords(uid).then(showWords);
         });
       });
     }
-
-    // TODO: CLICK EVENT FOR EDITING A BOOK
-    if (e.target.id.includes('update-book')) {
+    if (e.target.id.includes('update-word')) {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
-        title: document.querySelector('#title').value,
-        description: document.querySelector('#description').value,
-        image: document.querySelector('#image').value,
-        price: document.querySelector('#price').value,
-        author_id: document.querySelector('#author_id').value,
-        sale: document.querySelector('#sale').checked,
+        Name: document.querySelector('#Name').value,
+        Description: document.querySelector('#desc').value,
+        Type: document.querySelector('#Type').value,
+        Time: document.querySelector('#time').value,
         firebaseKey,
       };
-
-      updateBook(payload).then(() => {
-        getBooks(user.uid).then(showBooks);
-      });
-    }
-
-    // FIXME: ADD CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN AUTHOR
-    if (e.target.id.includes('submit-author')) {
-      console.warn('CLICKED SUBMIT AUTHOR');
-      const payload = {
-        first_name: document.querySelector('#first_name').value,
-        last_name: document.querySelector('#last_name').value,
-        email: document.querySelector('#email').value,
-        favorite: document.querySelector('#favorite').checked
-      };
-
-      createAuthor(payload).then(({ name }) => {
-        const patchPayload = { firebaseKey: name };
-
-        updateAuthor(patchPayload).then(() => {
-          getAuthors(user.uid).then(showAuthors);
+      payload.firebaseKey = firebaseKey;
+      oneThing(firebaseKey).then()) => {
+        updateWords(payload).then(() => {
+          getWords(uid).then(showWords);
         });
       });
     }
-    // FIXME:ADD CLICK EVENT FOR EDITING AN AUTHOR
-    if (e.target.id.includes('update-author')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      const payload = {
-        first_name: document.querySelector('#first_name').value,
-        last_name: document.querySelector('#last_name').value,
-        email: document.querySelector('#email').value,
-        favorite: document.querySelector('#favorite').checked,
-        firebaseKey, // what does this do??
-      };
+  });
 
-      updateAuthor(payload).then(() => {
-        getAuthors(user.uid).then(showAuthors);
-      });
+  document.querySelector('#form-display').addEventListener('click', (e) => {
+    if (e.target.id.includes('add-a-thing')) {
+      clearDOM();
+      const domString = `
+      <div id="add-category-div>
+        <label for="new-category">New Thing</label>
+        <input id="new-category">
+        <button id="new-category-btn">Do the thing!!</button>
+      </div>
+      `;
+
+      renderToDOM(domString, '#form-display');
     }
   });
 };

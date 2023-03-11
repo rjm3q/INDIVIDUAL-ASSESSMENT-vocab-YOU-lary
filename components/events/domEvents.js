@@ -1,65 +1,32 @@
-// import addBookForm from '../components/forms/addBookForm';
-// import addAuthorForm from '../components/forms/addAuthorForm';
-// import { getSingleBook, getBooks, deleteBook } from '../api/bookData';
-// import { showBooks } from '../pages/books';
-// import { showAuthors } from '../pages/authors';
-// import viewBook from '../pages/viewBook';
-// import { getBookDetails } from '../api/mergedData';
-// import { getAuthors, getSingleAuthor, deleteSingleAuthor } from '../api/authorData';
+import { getWords, deleteWord, oneThing } from '../../api/promise';
+import showWordForm from '../forms/showWordForm';
+import { showWords } from '../../pages/words';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
-    // TODO: CLICK EVENT FOR DELETING A BOOK
-    if (e.target.id.includes('delete-book')) {
+    if (e.target.id.includes('delete-word')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
-        console.warn('CLICKED DELETE BOOK', e.target.id);
-        const [, firebaseKey] = e.target.id.split('--');blank
-        deleteBook(firebaseKey).then(() => {
-          getBooks(user.uid).then(showBooks);
-        });
-      }
-    }
-
-    // TODO: CLICK EVENT FOR SHOWING FORM FOR ADDING A BOOK
-    if (e.target.id.includes('add-book-btn')) {
-      addBookForm(user);
-    }
-
-    // TODO: CLICK EVENT EDITING/UPDATING A BOOK
-    if (e.target.id.includes('edit-book-btn')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      getSingleBook(firebaseKey).then((bookObj) => addBookForm(bookObj));
-    }
-    // TODO: CLICK EVENT FOR VIEW BOOK DETAILS
-    if (e.target.id.includes('view-book-btn')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      getBookDetails(firebaseKey).then(viewBook);
-    }
-
-    // FIXME: ADD CLICK EVENT FOR DELETING AN AUTHOR
-    if (e.target.id.includes('delete-author-btn')) {
-      // eslint-disable-next-line no-alert
-      if (window.confirm('Want to delete?')) {
-        console.warn('DELETE AUTHOR', e.target.id);
+        console.warn('CLICKED DELETE WORD', e.target.id);
         const [, firebaseKey] = e.target.id.split('--');
-        deleteSingleAuthor(firebaseKey).then(() => {
-          getAuthors(user.uid).then(showAuthors);
+        deleteWord(firebaseKey).then(() => {
+          getWords(user.uid).then(showWords);
         });
       }
     }
-
-    // FIXME: ADD CLICK EVENT FOR SHOWING FORM FOR ADDING AN AUTHOR
-    if (e.target.id.includes('add-author-btn')) {
-      console.warn('ADD AUTHOR');
-      addAuthorForm(user);
-    }
-    // FIXME: ADD CLICK EVENT FOR EDITING AN AUTHOR
-    if (e.target.id.includes('update-author')) {
+    if (e.target.id.includes('update-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-
-      getSingleAuthor(firebaseKey).then((authObj) => addAuthorForm(authObj));
+      oneThing(firebaseKey).then((card) => showWordForm(card));
     }
+
+    // if (e.target.id.includes ('filter-btn')) {
+    //   const UserGen= document.querySelector(#filtered).value.toLowerCase();
+    //   FilterWords(uid, UserGen).then(showWord)
+    // }
+
+    // if (e.target.id.includes ('')) {
+    //     const [, firebaseKey] = e.target.id.split('--');
+    // };
   });
 };
 

@@ -1,10 +1,11 @@
 {
  "word": {
-  "Title": "Squegee",
+  "Name": "Squegee",
   "Definition": "a device that allows one to squge",
-  "Language": "Upper Uncton",
+  "Type": "OOP",
   "Time Submital": "1245 pm",
-  "user_id": "sillwilly"
+  "firebaseKey" : "d27ba19f3b32",
+  "uid": "d27ba19f3b32"
  }
 
 }
