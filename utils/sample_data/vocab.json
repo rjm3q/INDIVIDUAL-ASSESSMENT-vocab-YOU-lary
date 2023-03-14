@@ -1,11 +1,44 @@
 {
- "word": {
-  "Name": "Squegee",
-  "Definition": "a device that allows one to squge",
-  "Type": "OOP",
-  "Time Submital": "1245 pm",
-  "firebaseKey" : "d27ba19f3b32",
-  "uid": "d27ba19f3b32"
- }
-
+  "vocab": {
+    "-NQSZ17hjkDwVzzf_Pa1": {
+      "Definition": "Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming.",
+      "Name": "Python",
+      "Time Submital": "1245 pm",
+      "Type": "2nd best at everything, 1st best at nothing",
+      "firebaseKey": "",
+      "uid": ""
+    },
+    "-NQS_Jdo-ZLSXjb8eFdl": {
+      "Definition": " .NET is a free and open-source, managed computer software framework for Windows, Linux, and macOS operating systems. It is a cross-platform[4] successor to .NET Framework. The project is primarily developed by Microsoft employees by way of the .NET Foundation, and released under the MIT License.",
+      "Name": ".NET",
+      "Time Submital": "1245 pm",
+      "Type": "App Development",
+      "firebaseKey": "-NQS_Jdo-ZLSXjb8eFdl",
+      "uid": ""
+    },
+    "-NQSaAIOBohnV79-aZR5": {
+      "Definition": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance. It was originally named POSTGRES, referring to its origins as a successor to the Ingres database developed at the University of California, Berkeley. ",
+      "Name": "PostgreSQL",
+      "Time Submital": "1245 pm",
+      "Type": "Database",
+      "firebaseKey": "-NQSaAIOBohnV79-aZR5",
+      "uid": ""
+    },
+    "-NQSa_7W6IaarGvT-1fg": {
+      "Definition": "Linux is a Unix-like, open source and community-developed operating system (OS) for computers, servers, mainframes, mobile devices and embedded devices.",
+      "Name": "Linux",
+      "Time Submital": "1245 pm",
+      "Type": "Server/OS",
+      "firebaseKey": "-NQSa_7W6IaarGvT-1fg",
+      "uid": ""
+    },
+    "-NQSakqh2gAGBJVY9Vqz": {
+      "Definition": "JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries.",
+      "Name": "JavaScript",
+      "Time Submital": "1245 pm",
+      "Type": "Web-based/ App Development",
+      "firebaseKey": "-NQSakqh2gAGBJVY9Vqz",
+      "uid": ""
+    }
+  }
 }

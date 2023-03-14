@@ -16,6 +16,7 @@ const formEvents = (uid) => {
         Type: document.querySelector('#Type').value,
         Time: document.querySelector('#time').value,
       };
+      // this is what updates the firbasekey when a user adds a word
       makeWords(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateWords(patchPayload).then(() => {
