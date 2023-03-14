@@ -15,7 +15,7 @@ const showWordForm = (obj = {}) => {
       <div class="form-group"> 
         <input type="text class="form-control" id="type" value="${obj.Type || ''}" required>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Submit Word</button>
+      <button id="submit-word" type="submit" class="btn btn-primary mt-3">Submit Word</button>
     </form>`;
 
   renderToDOM('#form-container', domString);

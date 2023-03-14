@@ -31,7 +31,7 @@ const showWords = (array) => {
     </div>
     `;
   });
-  renderToDOM('#store', domString);
+  renderToDOM('#app', domString);
 };
 
 export { showWords, emptyWords };
