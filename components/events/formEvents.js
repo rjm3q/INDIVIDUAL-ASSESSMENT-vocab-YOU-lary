@@ -5,16 +5,19 @@ import { showWords } from '../../pages/words';
 import clearDom from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDom';
 
+const timeCop = Date.now();
+
 const formEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // TODO: CLICK EVENT FOR SUBMITTING FORM FOR ADDING A BOOK
-    if (e.target.id.includes('submit')) {
+    if (e.target.id.includes('submit-word')) {
       const payload = {
-        Name: document.querySelector('#Name').value,
-        Description: document.querySelector('#desc').value,
-        Type: document.querySelector('#Type').value,
-        Time: document.querySelector('#time').value,
+        Name: document.querySelector('#name').value,
+        Definition: document.querySelector('#definition').value,
+        Type: document.querySelector('#type').value,
+        Time_Submital: timeCop,
+        uid,
       };
       // this is what updates the firbasekey when a user adds a word
       makeWords(payload).then(({ name }) => {
@@ -28,9 +31,10 @@ const formEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         Name: document.querySelector('#Name').value,
-        Description: document.querySelector('#desc').value,
+        Definition: document.querySelector('#desc').value,
         Type: document.querySelector('#Type').value,
-        Time: document.querySelector('#time').value,
+        Time_Submital: timeCop,
+        uid,
         firebaseKey,
       };
       payload.firebaseKey = firebaseKey;

@@ -6,13 +6,16 @@ const showWordForm = (obj = {}) => {
   const domString = `
     <form id="${obj.firebaseKey ? `update-word--${obj.firebaseKey}` : 'submit-word'}" class="mb-4">
       <div class="form-group">
-        <label for="image">Name</label>
+        <label for="title">Word</label>
         <input type="text" class="form-control" id="name"  value="${obj.Name || ''}" required>
       </div>
-        <label for="title">Description</label>
-        <input type="email" class="form-control" id="email" value="${obj.email || ''}" required>
+      <div class="form-group"> 
+        <input type="text class="form-control" id="definition" value="${obj.Definition || ''}" required>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Submit Author</button>
+      <div class="form-group"> 
+        <input type="text class="form-control" id="type" value="${obj.Type || ''}" required>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Submit Word</button>
     </form>`;
 
   renderToDOM('#form-container', domString);

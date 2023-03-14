@@ -14,12 +14,12 @@ const domEvents = (user) => {
         });
       }
     }
-    if (e.target.id.includes('update-btn')) {
+    if (e.target.id.includes('update-word')) {
       const [, firebaseKey] = e.target.id.split('--');
       oneThing(firebaseKey).then((card) => showWordForm(card));
     }
 
-    // if (e.target.id.includes ('filter-btn')) {
+    // if (e.target.id.includes ('filter-word')) {
     //   const UserGen= document.querySelector(#filtered).value.toLowerCase();
     //   FilterWords(uid, UserGen).then(showWord)
     // }

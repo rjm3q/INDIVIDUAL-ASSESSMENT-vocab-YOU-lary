@@ -57,7 +57,7 @@ const deleteWord = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const oneThing = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${url}/words/${firebaseKey}.json`, {
+  fetch(`${url}/vocab/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
