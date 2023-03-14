@@ -3,8 +3,14 @@
 
 
 body {
-  background-color: antiquewhite;
+  background-color: rgb(111, 63, 0);
   color: brown;
   text-align: center;
   margin-top: 100px;
+}
+
+.card {
+  max-width: 60%;
+  margin: 15px;
+  margin-left: auto;
 }
