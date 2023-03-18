@@ -86,11 +86,11 @@ const filterWord = (uid, input) => new Promise((resolve, reject) => {
         const alphaArray = Object.values(data).sort((a, b) => ((a.Name.toLowerCase() > b.Name.toLowerCase()) ? 1 : -1));
         resolve(alphaArray);
       } else if (input === 'Newest') {
-        const newestArray = Object.values(data).sort((a, b) => ((a.time_submitted > b.time_submitted) ? 1 : -1));
+        const newestArray = Object.values(data).sort((a, b) => ((a.Time_Submital > b.Time_Submital) ? 1 : -1));
         resolve(newestArray);
       } else if (input === 'Oldest') {
         console.warn('oldest!');
-        const oldestArray = Object.values(data).sort((a, b) => ((a.time_submitted > b.time_submitted) ? -1 : 1));
+        const oldestArray = Object.values(data).sort((a, b) => ((a.Time_Submital > b.Time_Submital) ? -1 : 1));
         resolve(oldestArray);
       } else if (input !== 'all') {
         const filterArray = Object.values(data).filter((word) => word.Type.toLowerCase() === input);
