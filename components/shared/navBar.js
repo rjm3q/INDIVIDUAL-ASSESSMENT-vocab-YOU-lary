@@ -10,21 +10,17 @@ const navBar = () => {
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#" id="all-words">
-              Show All Words <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="sale-books">User added Words</a>
-          </li>
-          <input
-            class="form-control mr-sm-2"
-            id="search"
-            placeholder="Search Robot Words Here"
-            aria-label="Search"
-          />
-          </li>
+        <li class="nav-item">
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="view-words">View all</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="create-word">Add your own</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="filter-word">Filter</a>
+      </li>
         </ul>
         <span class="navbar-text">
           <div id="cart-button"></div>
