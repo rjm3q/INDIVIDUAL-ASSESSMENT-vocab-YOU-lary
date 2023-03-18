@@ -13,10 +13,10 @@ const navBar = () => {
         <li class="nav-item">
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" id="view-words">View Vocab Words</a>
+        <a class="nav-link" href="#" id="view-words">View all</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" id="create-word">Create a Word</a>
+        <a class="nav-link" href="#" id="create-word">Add your own</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" id="filter-word">Filter</a>

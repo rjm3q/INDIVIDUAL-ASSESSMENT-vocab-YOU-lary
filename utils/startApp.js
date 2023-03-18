@@ -1,4 +1,4 @@
-import getWords from '../api/promise';
+import { getWords } from '../api/promise';
 import domBuilder from '../components/shared/domBuilder';
 import navBar from '../components/shared/navBar';
 import logoutButton from '../components/buttons/logoutButton';
