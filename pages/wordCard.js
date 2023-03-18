@@ -23,8 +23,6 @@ const showWords = (array) => {
         <p class"card-text">${item.Definition}</p>
         <i class="fas fa-edit btn btn-info" id="update-word--${item.firebaseKey}">Update Items</i>
         <i class="btn btn-danger fas fa-trash-alt" id="delete-word--${item.firebaseKey}">Delete Items</i>
-        <div id= "user-div">
-        </div>
       </div>
     </div>
     `;
