@@ -73,7 +73,7 @@ const oneThing = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const filterWord = (uid, input) => new Promise((resolve, reject) => {
+const htmlFilter = (uid) => new Promise((resolve, reject) => {
   fetch(`${url}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
@@ -82,26 +82,42 @@ const filterWord = (uid, input) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      if (input === 'A-Z') {
-        const alphaArray = Object.values(data).sort((a, b) => ((a.Name.toLowerCase() > b.Name.toLowerCase()) ? 1 : -1));
-        resolve(alphaArray);
-      } else if (input === 'Newest') {
-        const newestArray = Object.values(data).sort((a, b) => ((a.time_submitted > b.time_submitted) ? 1 : -1));
-        resolve(newestArray);
-      } else if (input === 'Oldest') {
-        console.warn('oldest!');
-        const oldestArray = Object.values(data).sort((a, b) => ((a.time_submitted > b.time_submitted) ? -1 : 1));
-        resolve(oldestArray);
-      } else if (input !== 'all') {
-        const filterArray = Object.values(data).filter((word) => word.Type.toLowerCase() === input);
-        resolve(filterArray);
-      } else {
-        resolve(Object.values(data));
-      }
+      const html = Object.values(data).filter((obj) => obj.language === 'HTML');
+      resolve(html);
+    })
+    .catch(reject);
+});
+
+const cssFilter = (uid) => new Promise((resolve, reject) => {
+  fetch(`${url}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const css = Object.values(data).filter((obj) => obj.language === 'CSS');
+      resolve(css);
+    })
+    .catch(reject);
+});
+
+const jsFilter = (uid) => new Promise((resolve, reject) => {
+  fetch(`${url}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const js = Object.values(data).filter((obj) => obj.language === 'JavaScript');
+      resolve(js);
     })
     .catch(reject);
 });
 
 export {
-  getWords, makeWords, updateWords, deleteWord, oneThing, filterWord
+  getWords, makeWords, updateWords, deleteWord, oneThing, jsFilter, htmlFilter, cssFilter
 };

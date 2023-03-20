@@ -6,8 +6,8 @@ const formEvents = (user) => {
     e.preventDefault();
     if (e.target.id.includes('#create-word')) {
       const payload = {
-        Name: document.querySelector('#').value,
-        Definition: document.querySelector('#').value,
+        Name: document.querySelector('#Name').value,
+        Definition: document.querySelector('#Definition').value,
         Time_Submital: Date.now(),
         Type: document.querySelector('#').value,
         uid: user.uid,
