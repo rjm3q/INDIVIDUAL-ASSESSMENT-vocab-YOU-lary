@@ -1,7 +1,7 @@
 import clearDom from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDom';
 
-const addWordForm = (obj = {}) => {
+const showWordForm = (obj = {}) => {
   clearDom();
   const domString = `
   <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
@@ -29,4 +29,4 @@ const addWordForm = (obj = {}) => {
   renderToDOM('#form-container', domString);
 };
 
-export default addWordForm;
+export default showWordForm;

@@ -17,7 +17,7 @@ const startApp = (user) => {
   formEvents(user);
   navigationEvents(user);
 
-  getWords(user.uid).then((vocabs) => showWords(vocabs));
+  getWords(user.uid).then((word) => showWords(word));
 };
 
 export default startApp;
