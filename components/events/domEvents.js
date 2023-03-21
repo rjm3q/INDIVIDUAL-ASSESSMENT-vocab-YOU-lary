@@ -1,29 +1,26 @@
 import {
-  deleteWord, getWords, oneThing, filterWord
+  deleteWord, getWords, oneThing
 } from '../../api/promise';
 import { showWords } from '../../pages/wordCard';
 import showWordForm from '../forms/showWordForm';
 
-const domEvents = (uid) => {
-  document.querySelector('#pp').addEventListener('click', (e) => {
+const domEvents = (user) => {
+  document.querySelector('#wordBox').addEventListener('click', (e) => {
     if (e.target.id.includes('#delete-word')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      deleteWord(firebaseKey).then(() => {
-        console.warn(uid);
-        getWords(uid).then(showWords);
-      });
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure about that?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        deleteWord(firebaseKey).then(() => {
+          getWords(user.uid).then(showWords);
+        });
+      }
+    }
+    if (e.target.id.includes('#add-word')) {
+      showWordForm(user);
     }
     if (e.target.id.includes('#update-word')) {
       const [, firebaseKey] = e.target.id.split('--');
-      oneThing(firebaseKey).then((card) => showWordForm(card));
-    }
-    if (e.target.id.includes('#filter-btn')) {
-      const filter = document.querySelector('#input').value.toLowerCase();
-      filterWord(uid, filter).then(showWords);
-    }
-    if (e.target.id.includes('#order-btn')) {
-      const order = document.querySelector('#input').value;
-      filterWord(uid, order).then(showWords);
+      oneThing(firebaseKey).then((word) => showWordForm(word));
     }
   });
 };

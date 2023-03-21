@@ -13,13 +13,19 @@ const navBar = () => {
         <li class="nav-item">
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" id="view-words">View all</a>
+        <a class="nav-link" href="#" id="show-all">View all</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" id="create-word">Add your own</a>
+        <a class="nav-link" href="#" id="add-word">Add your own</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" id="filter-word">Filter</a>
+      <a class="nav-link" href="#" id="cssFilter">CSS</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#" id="htmlFilter">HTML</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#" id="jsFilter">JavaScript</a>
       </li>
         </ul>
         <span class="navbar-text">

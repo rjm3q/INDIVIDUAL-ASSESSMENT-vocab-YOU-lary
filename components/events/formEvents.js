@@ -8,15 +8,29 @@ const formEvents = (user) => {
       const payload = {
         Name: document.querySelector('#Name').value,
         Definition: document.querySelector('#Definition').value,
-        Time_Submital: Date.now(),
-        Type: document.querySelector('#').value,
+        Time_Submital: Date.now().toLocaleString(),
+        Type: document.querySelector('#Type').value,
         uid: user.uid,
       };
       makeWords(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
+        console.warn(payload);
         updateWords(patchPayload).then(() => {
           getWords(user.uid).then(showWords);
         });
+      });
+    }
+    if (e.target.id.includes('#update-word')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        Name: document.querySelector('#Name').value,
+        Definition: document.querySelector('#Definition').value,
+        Time_Submital: Date.now().toLocaleString(),
+        Type: document.querySelector('#Type').value,
+        firebaseKey,
+      };
+      updateWords(payload).then(() => {
+        getWords(user.uid).then(showWords);
       });
     }
   });
