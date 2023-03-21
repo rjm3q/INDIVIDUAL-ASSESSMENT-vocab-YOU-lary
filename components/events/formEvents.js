@@ -2,7 +2,7 @@ import { getWords, makeWords, updateWords } from '../../api/promise';
 import { showWords } from '../../pages/wordCard';
 
 const formEvents = (user) => {
-  document.querySelector('#navigation').addEventListener('submit', (e) => {
+  document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('#create-word')) {
       const payload = {

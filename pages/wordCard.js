@@ -3,7 +3,7 @@ import renderToDOM from '../utils/renderToDom';
 
 const emptyWords = () => {
   const domString = '<h1>No Words</h1>';
-  renderToDOM('#wordBox', domString);
+  renderToDOM('#store', domString);
 };
 
 const showWords = (array) => {
@@ -27,7 +27,7 @@ const showWords = (array) => {
     </div>
     `;
   });
-  renderToDOM('#wordBox', domString);
+  renderToDOM('#store', domString);
 };
 
 export { showWords, emptyWords };
