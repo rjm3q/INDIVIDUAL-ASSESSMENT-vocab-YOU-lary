@@ -1,25 +1,27 @@
 import { signOut } from '../../utils/auth';
-import showWordForm from '../forms/showWordForm';
-import * as promise from '../../api/promise';
+import { showWords } from '../../pages/wordCard';
+import {
+  jsFilter, cssFilter, htmlFilter, getWords
+} from '../../api/promise';
 
 const navigationEvents = (user) => {
   document.querySelector('#logout-button').addEventListener('click', signOut);
 
   document.querySelector('#show-all').addEventListener('click', () => {
-    promise.getWords(user.uid).then(showWordForm);
+    getWords(user.uid).then(showWords);
   });
 
   // Filters
   document.querySelector('#jsFilter').addEventListener('click', () => {
-    promise.jsFilter(user.uid).then(showWordForm);
+    jsFilter(user.uid).then(showWords);
   });
 
   document.querySelector('#htmlFilter').addEventListener('click', () => {
-    promise.htmlFilter(user.uid).then(showWordForm);
+    htmlFilter(user.uid).then(showWords);
   });
 
   document.querySelector('#cssFilter').addEventListener('click', () => {
-    promise.cssFilter(user.uid).then(showWordForm);
+    cssFilter(user.uid).then(showWords);
   });
 };
 

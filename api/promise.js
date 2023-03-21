@@ -112,7 +112,7 @@ const jsFilter = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const js = Object.values(data).filter((obj) => obj.Type === 'JavaScript');
+      const js = Object.values(data).filter((obj) => obj.Type === 'JS');
       resolve(js);
     })
     .catch(reject);

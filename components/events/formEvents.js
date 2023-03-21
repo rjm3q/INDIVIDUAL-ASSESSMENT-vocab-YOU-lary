@@ -4,7 +4,7 @@ import { showWords } from '../../pages/wordCard';
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
-    if (e.target.id.includes('#create-word')) {
+    if (e.target.id.includes('#add-word')) {
       const payload = {
         Name: document.querySelector('#Name').value,
         Definition: document.querySelector('#Definition').value,
