@@ -82,7 +82,7 @@ const htmlFilter = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const html = Object.values(data).filter((obj) => obj.language === 'HTML');
+      const html = Object.values(data).filter((obj) => obj.Type === 'HTML');
       resolve(html);
     })
     .catch(reject);
@@ -97,7 +97,7 @@ const cssFilter = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const css = Object.values(data).filter((obj) => obj.language === 'CSS');
+      const css = Object.values(data).filter((obj) => obj.Type === 'CSS');
       resolve(css);
     })
     .catch(reject);
@@ -112,7 +112,7 @@ const jsFilter = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const js = Object.values(data).filter((obj) => obj.language === 'JavaScript');
+      const js = Object.values(data).filter((obj) => obj.Type === 'JavaScript');
       resolve(js);
     })
     .catch(reject);

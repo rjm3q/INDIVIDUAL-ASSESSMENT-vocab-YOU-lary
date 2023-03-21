@@ -6,8 +6,8 @@ const showWordForm = (obj = {}) => {
   const domString = `
   <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
       <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" aria-describedby="bookTitle" placeholder="Enter A Vocabulary" value="${obj.Name || ''}" required>
+        <label for="title">Name</label>
+        <input type="text" class="form-control" id="Name" aria-describedby="bookTitle" placeholder="Enter A Word" value="${obj.Name || ''}" required>
       </div>
       <div class="form-group">
         <label for="description">Definition</label>
@@ -15,7 +15,7 @@ const showWordForm = (obj = {}) => {
       </div>
       <div class="form-group" id="select-language">
       <label for="category">Language</label>
-        <select class="form-control" placeholder="Select Category" id="language" name="vocabCategory" value="${obj.Type || ''}" required>
+        <select class="form-control" placeholder="Select Category" id="Type" name="vocabCategory" value="${obj.Type || ''}" required>
         <option value="">Select a Language</option>
           <option value="HTML" ${obj.Type === 'HTML' ? 'selected' : ''}>HTML</option>
           <option value="CSS" ${obj.Type === 'CSS' ? 'selected' : ''}>CSS</option>

@@ -5,7 +5,7 @@ import { showWords } from '../../pages/wordCard';
 import showWordForm from '../forms/showWordForm';
 
 const domEvents = (user) => {
-  document.querySelector('#app').addEventListener('click', (e) => {
+  document.querySelector('#wordBox').addEventListener('click', (e) => {
     if (e.target.id.includes('#delete-word')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Are you sure about that?')) {
