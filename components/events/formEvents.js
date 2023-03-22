@@ -4,11 +4,11 @@ import { showWords } from '../../pages/wordCard';
 const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
-    if (e.target.id.includes('#add-word')) {
+    if (e.target.id.includes('submit-word')) {
       const payload = {
         Name: document.querySelector('#Name').value,
         Definition: document.querySelector('#Definition').value,
-        Time_Submital: Date.now().toLocaleString(),
+        Time_Submital: new Date().toLocaleString(),
         Type: document.querySelector('#Type').value,
         uid: user.uid,
       };
@@ -20,12 +20,12 @@ const formEvents = (user) => {
         });
       });
     }
-    if (e.target.id.includes('#update-word')) {
+    if (e.target.id.includes('update-word')) {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         Name: document.querySelector('#Name').value,
         Definition: document.querySelector('#Definition').value,
-        Time_Submital: Date.now().toLocaleString(),
+        Time_Submital: new Date().toLocaleString(),
         Type: document.querySelector('#Type').value,
         firebaseKey,
       };

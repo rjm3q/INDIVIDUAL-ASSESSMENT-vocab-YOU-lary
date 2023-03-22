@@ -11,7 +11,7 @@ const showWords = (array) => {
 
   const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-word">Input Word</button>';
 
-  renderToDOM('#add-button', btnString);
+  renderToDOM('#add-word', btnString);
 
   let domString = '';
   array.forEach((item) => {

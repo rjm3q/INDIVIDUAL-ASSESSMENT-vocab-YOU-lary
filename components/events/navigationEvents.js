@@ -3,9 +3,14 @@ import { showWords } from '../../pages/wordCard';
 import {
   jsFilter, cssFilter, htmlFilter, getWords
 } from '../../api/promise';
+import showWordForm from '../forms/showWordForm';
 
 const navigationEvents = (user) => {
   document.querySelector('#logout-button').addEventListener('click', signOut);
+
+  document.querySelector('#add-word').addEventListener('click', () => {
+    showWordForm(user);
+  });
 
   document.querySelector('#show-all').addEventListener('click', () => {
     getWords(user.uid).then(showWords);
